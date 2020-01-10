@@ -5,6 +5,7 @@ import { createStore } from 'redux';
 import './app.css';
 import { Paper, Toolbar, AppBar, IconButton } from '@material-ui/core';
 import ForecastExtended from './components/ForecastExtended';
+import { setCity } from './actions';  
 
 const cities = [
   'Santiago,cl',
@@ -15,7 +16,7 @@ const cities = [
 
 const store = createStore(()=>{}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-const setCity = value => ({ type:'setCity' , value });
+ 
 
 class App extends Component {
 
