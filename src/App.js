@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import LocationList from './components/LocationList';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { createStore } from 'redux';
 import './app.css';
 import { Paper, Toolbar, AppBar, IconButton } from '@material-ui/core';
 import ForecastExtended from './components/ForecastExtended';
@@ -11,6 +12,10 @@ const cities = [
   'Buenos Aires,ar',
   'Bogotá,col'
 ];
+
+const store = createStore(()=>{}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+const setCity = value => ({ type:'setCity' , value });
 
 class App extends Component {
 
@@ -24,6 +29,8 @@ class App extends Component {
     this.setState({city});
 
     console.log(city);
+    
+    store.dispatch(setCity(city));
   }
 
   render(){
