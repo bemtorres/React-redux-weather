@@ -6,22 +6,10 @@ import PropTypes from 'prop-types';
 // import Button from "@material-ui/core/Button";
 import './styles.css';
 import { CircularProgress } from '@material-ui/core';
- 
+import {URL_WEATHER,API_KEY} from './../../constants';
 
-const url = "http://api.openweathermap.org/data/2.5/weather";
-const api_key = "dab0117ff85c4b6234172aae16325bbb";
-// const data1 = {
-//     temperature: 10,
-//     weatherState: "cloud",
-//     humidity: 100,
-//     wind: '200 m/s'
-// };
-// const data2 = {
-//     temperature: -10,
-//     weatherState: "cloud",
-//     humidity: 100,
-//     wind: '200 m/s'
-// };
+
+
 
 class WeatherLocation extends Component{ 
 
@@ -71,7 +59,7 @@ class WeatherLocation extends Component{
 
     handlerUpdateClick = () =>{
         const {city} = this.state;
-        const api_wather = `${url}?q=${city}&APPID=${api_key}`;
+        const api_wather = `${URL_WEATHER}?q=${city}&APPID=${API_KEY}`;
         fetch(api_wather)
         .then( resp => {
             return resp.json();

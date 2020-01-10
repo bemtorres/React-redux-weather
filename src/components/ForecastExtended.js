@@ -3,25 +3,9 @@ import PropTypes from 'prop-types';
 import './styles.css';
 import ForecastItem from './ForescastItem';
 import transformForecast from './../services/transformForecast';
+import {URL_FORECAST,API_KEY} from './../constants';
 
-// const days  =[
-//     'Lunes',
-//     'Martes',
-//     'Miercoles',
-//     'Jueves',
-//     'Viernes',
-//     'Sabado',
-//     'Domingo',
-// ];
-// const data = {
-//     temperature: -10,
-//     weatherState: "Clouds",
-//     humidity: 100,
-//     wind: '200 m/s'
-// };
 
-const url = "http://api.openweathermap.org/data/2.5/forecast";
-const api_key = "dab0117ff85c4b6234172aae16325bbb";
 
 
 class ForecastExtended  extends Component {
@@ -48,7 +32,7 @@ class ForecastExtended  extends Component {
     }
 
     updateCity = city => {
-        const api_wather = `${url}?q=${city}&APPID=${api_key}`;
+        const api_wather = `${URL_FORECAST}?q=${city}&APPID=${API_KEY}`;
         fetch(api_wather)
         .then( resp => {
             return resp.json();

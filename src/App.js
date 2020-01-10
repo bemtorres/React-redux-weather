@@ -1,22 +1,14 @@
 import React, {Component} from 'react';
 import LocationList from './components/LocationList';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import { createStore } from 'redux';
 import './app.css';
 import { Paper, Toolbar, AppBar, IconButton } from '@material-ui/core';
 import ForecastExtended from './components/ForecastExtended';
 import { setCity } from './actions';  
+import { store } from './store';  
+import { CITIES } from './constants';
 
-const cities = [
-  'Santiago,cl',
-  'Calera de Tango,cl',
-  'Buenos Aires,ar',
-  'Bogotá,col'
-];
 
-const store = createStore(()=>{}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-
- 
 
 class App extends Component {
 
@@ -52,7 +44,7 @@ class App extends Component {
             </Row>
             <Row>
               <Col xs={12} md={6}>
-                <LocationList cities={cities} onSelectedLocation={this.handleSelectedLocation}></LocationList>    
+                <LocationList cities={CITIES} onSelectedLocation={this.handleSelectedLocation}></LocationList>    
               </Col>   
               <Col xs={12} md={6}>
                 <Paper elevation={4} />
