@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import LocationList from './components/LocationList';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import './app.css';
 import { Paper, Toolbar, AppBar, IconButton } from '@material-ui/core';
 import ForecastExtended from './components/ForecastExtended';
 import { setCity } from './actions';  
-import { store } from './store';  
+// import { store } from './store';  
 import { CITIES } from './constants';
-
+import './app.css';
 
 
 class App extends Component {
@@ -23,7 +23,8 @@ class App extends Component {
 
     console.log(city);
     
-    store.dispatch(setCity(city));
+    // store.dispatch(setCity(city));
+    this.props.setCity(city);
   }
 
   render(){
@@ -71,4 +72,8 @@ class App extends Component {
 //   );
 // }
 
-export default App;
+const mapDispacthToPropsActions = dispatch => ({
+  setCity: value => dispatch(setCity(value))
+});
+const AppConnected =connect(null,mapDispacthToPropsActions)(App) ;
+export default AppConnected;
