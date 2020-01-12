@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { setCity } from './../actions';  
 import LocationList from './../components/LocationList';
 
-class LocationListContainer  extends Component {
+class LocationListContainer extends Component {
 
     handleSelectedLocation = city =>{
         console.log('handleSelectedLocation 2'); 
