@@ -8,7 +8,6 @@ const getTemp = (kelvin) =>{
 const transformWeather = (weather_data) =>{
     const { humidity, temp } = weather_data.main;
     const { speed } = weather_data.wind;
-    // const weatherState = this.getWeatherState(this.weather);
     const weatherState = weather_data.weather[0].main;
     const temperature = getTemp(temp);
 
