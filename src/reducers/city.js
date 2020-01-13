@@ -4,10 +4,7 @@ export const city = (state = {},action)=> {
     //detectar cuando el accion sea igual a city
     switch (action.type) {
         case SET_CITY:
-            return {
-                ...state,
-                city: action.payload
-            }       
+            return action.payload;
         default:
             break;
     }

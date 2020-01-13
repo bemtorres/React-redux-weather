@@ -5,9 +5,6 @@ import ForecastItem from './ForescastItem';
 import transformForecast from './../services/transformForecast';
 import {URL_FORECAST,API_KEY} from './../constants';
 
-
-
-
 class ForecastExtended  extends Component {
 
     constructor(){
