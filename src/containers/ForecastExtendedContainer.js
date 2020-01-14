@@ -5,19 +5,27 @@ import { connect } from 'react-redux';
 
 export class ForecastExtendedContainer extends Component {
     render() {
+        const {city, forecastData} = this.props; 
+        console.log(city);
+        console.log(forecastData);        
+        console.log("ACA");
         return (
-            this.props.city1 &&
-            <ForecastExtended city={this.props.city1 } /> 
+            city &&
+            <ForecastExtended city={city} forecastData={forecastData}/> 
         );
     }
 }
 
 ForecastExtendedContainer.propTypes = {
-    city1 : PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    forecastData: PropTypes.array, 
 };
 
-const mapStateToProps = state =>({ city1: state.city });  //añade a las propededaes
-
-// const mapStateToProps = ({city}) =>({ city });  //estructuring
+const mapStateToProps = ({city, cities}) =>(
+    {
+        city,
+        forecastData: cities[city] && cities[city].forecastData,
+    }
+);  //añade a las propededaes
 
 export default connect(mapStateToProps,null)(ForecastExtendedContainer);

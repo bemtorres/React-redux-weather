@@ -3,11 +3,11 @@ import transformForecast from './../services/transformForecast';
 import {URL_FORECAST,API_KEY} from './../constants';
 
 export const SET_CITY = 'SET_CITY';
-export const SET_FORECAST_DATA = 'SET_FORECASTDATA';
+export const SET_FORECAST_DATA = 'SET_FORECAST_DATA';
 
 const setCity = payload => ({ type: SET_CITY, payload });
 // export  const setCity = value => ({ type:SET_CITY , value });
-export const setForecastData = payload => ({ type:SET_FORECAST_DATA , payload });
+export const setForecastData = payload => ({ type:SET_FORECAST_DATA , value:payload });
 
 // middlewares
 export const setSelectedCity = payload => {
@@ -26,7 +26,7 @@ export const setSelectedCity = payload => {
             console.log(forecastData);
 
             // Modificar el resultado con la promesa
-            dispatch(setForecastData({ city : payload, forecastData}));
+            dispatch( setForecastData({ city : payload, forecastData}));
             }
         );
 

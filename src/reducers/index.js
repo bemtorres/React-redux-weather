@@ -4,7 +4,7 @@ import { city } from './city';
 import { cities } from './cities';
 
 
-export  default combineReducers({
+export default combineReducers({
     cities,
     city
 });

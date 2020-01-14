@@ -7,8 +7,7 @@ import LocationList from './../components/LocationList';
 class LocationListContainer extends Component {
 
     handleSelectedLocation = city =>{
-        console.log('handleSelectedLocation 2'); 
-        this.props.dispatchSetCity(city); //funcion para que nuestro componente tenga una propiedad
+       this.props.dispatchSetCity(city); //funcion para que nuestro componente tenga una propiedad
     }
 
     render() {

@@ -7,15 +7,11 @@ import PropTypes from 'prop-types';
 const LocationList  = ({ cities,onSelectedLocation }) =>  {
     
     const handleWeatherLocationClick = city => {
-        console.log(city);
         onSelectedLocation(city);
     };
 
     const strToComponent = cities => (   
-        cities.map( city => (
-            <WeatherLocation city={city} key={city} onWeatherLocationClick={ () => handleWeatherLocationClick(city) } /> 
-            ) 
-        )   
+        cities.map( city => (<WeatherLocation city={city} key={city} onWeatherLocationClick={ () => handleWeatherLocationClick(city) } /> ))   
     );
 
     return (
