@@ -9,3 +9,7 @@ export const cities = (state = {}, action) => {
             return state;
     }
 }
+
+export const getForecastDataFromCities = (state, city) => state[city] && state[city].forecastData;
+
+export const getCity = state => state.city;

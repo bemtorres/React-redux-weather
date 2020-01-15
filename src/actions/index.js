@@ -26,7 +26,7 @@ export const setSelectedCity = payload => {
             console.log(forecastData);
 
             // Modificar el resultado con la promesa
-            dispatch( setForecastData({ city : payload, forecastData}));
+            dispatch(setForecastData({ city : payload, forecastData}));
             }
         );
 
